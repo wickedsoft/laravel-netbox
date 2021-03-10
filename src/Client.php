@@ -8,22 +8,23 @@ class Client
 {
     /** @var array */
     protected $classes = [
-        'attachments' => 'Attachments',
-        'creditinvoices' => 'CreditInvoices',
-        'creditors' => 'Creditors',
-        'debtors' => 'Debtors',
-        'domains' => 'Domains',
-        'groups' => 'Groups',
-        'handles' => 'Handles',
-        'hosting' => 'Hosting',
-        'invoices' => 'Invoices',
-        'orders' => 'Orders',
-        'pricequotes' => 'PriceQuotes',
-        'products' => 'Products',
-        'services' => 'Services',
-        'ssl' => 'Ssl',
-        'tickets' => 'Tickets',
-        'vps' => 'Vps',
+        'providers' => 'Providers',
+        'circuits' => 'Circuits',
+        'sites' => 'Sites',
+        'racks' => 'Racks',
+        'devices' => 'Devices',
+        'ips' => 'Ips',
+        'prefixes' => 'Prefixes',
+        'cables' => 'Cables',
+        'interfaces' => 'Interfaces',
+        'rirs' => 'Rirs',
+        'vlans' => 'Vlans',
+        'vrfs' => 'Vrfs',
+        'secrets' => 'Secrets',
+        'tenants' => 'Tenants',
+        'users' => 'Users',
+        'clusters' => 'Clusters',
+        
     ];
 
     /** @var \wickedsoft\NetBox\HttpClient */
