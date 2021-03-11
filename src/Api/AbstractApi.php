@@ -29,4 +29,28 @@ abstract class AbstractApi implements ApiInterface
             'api_key' => $this->client->getHttpClient()->getOptions()['key']
         ], $parameters));
     }
+    
+    /**
+     * @param array $parameters
+     * @return mixed
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    protected function put($parameters)
+    {
+        return $this->client->getHttpClient()->put(array_merge([
+            'api_key' => $this->client->getHttpClient()->getOptions()['key']
+        ], $parameters));
+    }
+        
+    /**
+     * @param array $parameters
+     * @return mixed
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    protected function delete($parameters)
+    {
+        return $this->client->getHttpClient()->delete(array_merge([
+            'api_key' => $this->client->getHttpClient()->getOptions()['key']
+        ], $parameters));
+    }
 }
