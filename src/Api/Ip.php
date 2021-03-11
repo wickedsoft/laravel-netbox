@@ -2,148 +2,60 @@
 
 namespace wickedsoft\NetBox\Api;
 
-class Ip extends AbstractApi
+class Ips extends AbstractApi
 {
     /**
-     * @see https://netboxdemo.com/api/ipam/ip-addresses
+     * @see https://www.hostfact.nl/developer/api/crediteuren/add
      * @param $params
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function add($params)
     {
-        return $this->post(array_merge(['controller' => 'ip', 'action' => 'add'], $params));
+        return $this->post(array_merge(['controller' => 'creditor', 'action' => 'add'], $params));
     }
 
     /**
-     * @see 
-     * @param $params
-     * @return mixed
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     */
-    public function create($params)
-    {
-        return $this->post(array_merge(['controller' => 'ip', 'action' => 'create'], $params));
-    }
-
-    /**
-     * @see
+     * @see https://www.hostfact.nl/developer/api/crediteuren/delete
      * @param $params
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function delete($params)
     {
-        return $this->post(array_merge(['controller' => 'ip', 'action' => 'delete'], $params));
+        return $this->post(array_merge(['controller' => 'creditor', 'action' => 'delete'], $params));
     }
 
     /**
-     * @see 
+     * @see https://www.hostfact.nl/developer/api/crediteuren/edit
      * @param $params
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function edit($params)
     {
-        return $this->post(array_merge(['controller' => 'ip', 'action' => 'edit'], $params));
+        return $this->post(array_merge(['controller' => 'creditor', 'action' => 'edit'], $params));
     }
 
     /**
-     * @see 
-     * @param $params
-     * @return mixed
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     */
-    public function getDomainList($params)
-    {
-        return $this->post(array_merge(['controller' => 'ip', 'action' => 'getdomainlist'], $params));
-    }
-
-    /**
-     * @see 
+     * @see https://www.hostfact.nl/developer/api/crediteuren/list
      * @param $params
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function list($params)
     {
-        return $this->post(array_merge(['controller' => 'ip', 'action' => 'list'], $params));
+        return $this->post(array_merge(['controller' => 'creditor', 'action' => 'list'], $params));
     }
 
     /**
-     * @see 
-     * @param $params
-     * @return mixed
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     */
-    public function removeFromServer($params)
-    {
-        return $this->post(array_merge(['controller' => 'ip', 'action' => 'removefromserver'], $params));
-    }
-
-    /**
-     * @see 
-     * @param $params
-     * @return mixed
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     */
-    public function sendAccountInfoByEmail($params)
-    {
-        return $this->post(array_merge(['controller' => 'ip', 'action' => 'sendaccountinfobyemail'], $params));
-    }
-
-    /**
-     * @see 
+     * @see https://www.hostfact.nl/developer/api/crediteuren/show
      * @param $params
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function show($params)
     {
-        return $this->post(array_merge(['controller' => 'ip', 'action' => 'show'], $params));
-    }
-
-    /**
-     * @see 
-     * @param $params
-     * @return mixed
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     */
-    public function suspend($params)
-    {
-        return $this->post(array_merge(['controller' => 'ip', 'action' => 'suspend'], $params));
-    }
-
-    /**
-     * @see 
-     * @param $params
-     * @return mixed
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     */
-    public function terminate($params)
-    {
-        return $this->post(array_merge(['controller' => 'ip', 'action' => 'terminate'], $params));
-    }
-
-    /**
-     * @see 
-     * @param $params
-     * @return mixed
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     */
-    public function unsuspend($params)
-    {
-        return $this->post(array_merge(['controller' => 'ip', 'action' => 'unsuspend'], $params));
-    }
-
-    /**
-     * @see 
-     * @param $params
-     * @return mixed
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     */
-    public function upDownGrade($params)
-    {
-        return $this->post(array_merge(['controller' => 'ip', 'action' => 'updowngrade'], $params));
+        return $this->post(array_merge(['controller' => 'creditor', 'action' => 'show'], $params));
     }
 }
