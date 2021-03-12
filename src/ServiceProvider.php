@@ -16,7 +16,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
         ], 'config');
 
         \Auth::provider('netbox', function ($app, array $config) {
-            return new \wickedsoft\NetBox\Providers\HostFactProvider();
+            return new \wickedsoft\NetBox\Providers\NetBoxProvider();
         });
     }
 
