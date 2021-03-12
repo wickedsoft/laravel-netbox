@@ -12,12 +12,11 @@ return [
     ],
 
     'client_options' => [
-        'base_uri' => env('NETBOX_DEFAULT_URL'),
         \GuzzleHttp\RequestOptions::COOKIES => true,
         \GuzzleHttp\RequestOptions::CONNECT_TIMEOUT => 10,
         \GuzzleHttp\RequestOptions::TIMEOUT => 10,
         \GuzzleHttp\RequestOptions::ALLOW_REDIRECTS => false,
-        'headers' => [
+        \GuzzleHttp\RequestOptions::HEADERS => [
                 'Authorization' => "Token ".env('NETBOX_DEFAULT_KEY'),
         ],
     ],
