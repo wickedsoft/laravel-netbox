@@ -40,7 +40,7 @@ class HttpClient implements HttpClientInterface
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function get($path, $body = [])
+    public function get($path="", $body = [])
     {
         return $this->request($path, $body, 'GET');
     }
@@ -50,7 +50,7 @@ class HttpClient implements HttpClientInterface
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function post($path, $body = [])
+    public function post($path="", $body = [])
     {
         return $this->request($path, $body, 'POST');
     }
@@ -60,7 +60,7 @@ class HttpClient implements HttpClientInterface
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function put($path, $body = [])
+    public function put($path="", $body = [])
     {
         return $this->request($path, $body, 'PUT');
     }
@@ -70,7 +70,7 @@ class HttpClient implements HttpClientInterface
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function delete($path, $body = [])
+    public function delete($path="", $body = [])
     {
         return $this->request($path, $body, 'DELETE');
     }
@@ -81,7 +81,7 @@ class HttpClient implements HttpClientInterface
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function request($path, $body, $method)
+    public function request($path="", $body, $method)
     {
         $response = $this->getClient()->request(
             $method,
