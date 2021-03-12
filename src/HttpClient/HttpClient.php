@@ -85,7 +85,7 @@ class HttpClient implements HttpClientInterface
     {
         $response = $this->getClient()->request(
             $method,
-            $this->getOptions()['base_url'].$path,
+            $path,
             [
                 'form_params' => $body
             ]
