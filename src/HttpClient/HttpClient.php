@@ -16,7 +16,7 @@ class HttpClient implements HttpClientInterface
     public function getClient()
     {
         if (!isset($this->client)) {
-            $this->client = new \GuzzleHttp\Client(config('netbox.client_options', []));
+            $this->client = new \GuzzleHttp\Client(config('netbox.client_options'));
 
             return $this->client;
         }
@@ -40,9 +40,16 @@ class HttpClient implements HttpClientInterface
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function get($path="", $body = [])
+    public function get($path="", $query = [])
     {
-        return $this->request($path, $body, 'GET');
+        $response = $this->getClient()->request(
+            'GET',
+            config('netbox.panels.default.key').$path,
+            [
+                'query' => $query
+            ]
+        );
+        return json_decode((string)$response->getBody(), true);
     }
 
     /**
@@ -52,7 +59,14 @@ class HttpClient implements HttpClientInterface
      */
     public function post($path="", $body = [])
     {
-        return $this->request($path, $body, 'POST');
+        $response = $this->getClient()->request(
+            'POST',
+            config('netbox.panels.default.key').$path,
+            [
+                'form_params' => $body
+            ]
+        );
+        return json_decode((string)$response->getBody(), true);
     }
 
     /**
@@ -62,7 +76,14 @@ class HttpClient implements HttpClientInterface
      */
     public function put($path="", $body = [])
     {
-        return $this->request($path, $body, 'PUT');
+        $response = $this->getClient()->request(
+            'PUT',
+            config('netbox.panels.default.key').$path,
+            [
+                'form_params' => $body
+            ]
+        );
+        return json_decode((string)$response->getBody(), true);
     }
 
     /**
@@ -72,25 +93,13 @@ class HttpClient implements HttpClientInterface
      */
     public function delete($path="", $body = [])
     {
-        return $this->request($path, $body, 'DELETE');
-    }
-
-    /**
-     * @param $body
-     * @param $method
-     * @return mixed
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     */
-    public function request($path="", $body, $method)
-    {
         $response = $this->getClient()->request(
-            $method,
-            $path,
+            'DELETE',
+            config('netbox.panels.default.key').$path,
             [
                 'form_params' => $body
             ]
         );
-
         return json_decode((string)$response->getBody(), true);
     }
 
