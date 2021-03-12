@@ -16,7 +16,7 @@ class Client
         'providers' => 'Providers',
         //dcim
         'cables' => 'Cables',
-        'connectedDevices' => 'ConnectedDevices'
+        'connectedDevices' => 'ConnectedDevices',
         'consoleConnections' => 'ConsoleConnections',
         'consolePortTemplates' => 'ConsolePortTemplates',
         'consolePorts' => 'ConsolePorts',
