@@ -8,12 +8,12 @@ class Client
 {
     /** @var array */
     protected $classes = [
-        'providers' => 'Providers',
+        'ip' => 'Ip',
+        /*'providers' => 'Providers',
         'circuits' => 'Circuits',
         'sites' => 'Sites',
         'racks' => 'Racks',
         'devices' => 'Devices',
-        'ips' => 'Ips',
         'prefixes' => 'Prefixes',
         'cables' => 'Cables',
         'interfaces' => 'Interfaces',
@@ -23,7 +23,7 @@ class Client
         'secrets' => 'Secrets',
         'tenants' => 'Tenants',
         'users' => 'Users',
-        'clusters' => 'Clusters',
+        'clusters' => 'Clusters',*/
         
     ];
 
