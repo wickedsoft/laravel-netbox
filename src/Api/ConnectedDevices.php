@@ -2,7 +2,7 @@
 
 namespace wickedsoft\NetBox\Api;
 
-class Cables extends AbstractApi
+class ConnectedDevices extends AbstractApi
 {
     /**
      * @param $params
