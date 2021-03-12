@@ -2,7 +2,7 @@
 
 namespace wickedsoft\NetBox\Api;
 
-class Ips extends AbstractApi
+class Ip extends AbstractApi
 {
     /**
      * @see https://www.hostfact.nl/developer/api/crediteuren/add
