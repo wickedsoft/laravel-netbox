@@ -13,7 +13,25 @@ interface HttpClientInterface
      * @param array $body
      * @return mixed
      */
-    public function post($body = []);
+    public function get($path, $body = []);
+
+    /**
+     * @param array $body
+     * @return mixed
+     */
+    public function post($path, $body = []);
+
+    /**
+     * @param array $body
+     * @return mixed
+     */
+    public function put($path, $body = []);
+
+    /**
+     * @param array $body
+     * @return mixed
+     */
+    public function delete($path, $body = []);
 
     /**
      * @param $body
