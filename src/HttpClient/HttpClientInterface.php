@@ -38,7 +38,7 @@ interface HttpClientInterface
      * @param $method
      * @return mixed
      */
-    public function request($body, $method);
+    public function request($path, $body, $method);
 
     /**
      * @param array $options
