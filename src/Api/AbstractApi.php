@@ -23,33 +23,45 @@ abstract class AbstractApi implements ApiInterface
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    protected function post($parameters)
+    protected function get($path, $parameters)
     {
-        return $this->client->getHttpClient()->post(array_merge([
+        return $this->client->getHttpClient()->get($path, array_merge([
             'api_key' => $this->client->getHttpClient()->getOptions()['key']
         ], $parameters));
     }
-    
+
     /**
      * @param array $parameters
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    protected function put($parameters)
+    protected function post($path, $parameters)
     {
-        return $this->client->getHttpClient()->put(array_merge([
+        return $this->client->getHttpClient()->post($path, array_merge([
             'api_key' => $this->client->getHttpClient()->getOptions()['key']
         ], $parameters));
     }
-        
+
     /**
      * @param array $parameters
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    protected function delete($parameters)
+    protected function put($path, $parameters)
     {
-        return $this->client->getHttpClient()->delete(array_merge([
+        return $this->client->getHttpClient()->put($path, array_merge([
+            'api_key' => $this->client->getHttpClient()->getOptions()['key']
+        ], $parameters));
+    }
+
+    /**
+     * @param array $parameters
+     * @return mixed
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    protected function delete($path, $parameters)
+    {
+        return $this->client->getHttpClient()->delete($path, array_merge([
             'api_key' => $this->client->getHttpClient()->getOptions()['key']
         ], $parameters));
     }
