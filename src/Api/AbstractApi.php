@@ -25,7 +25,7 @@ abstract class AbstractApi implements ApiInterface
      */
     protected function get($path, $parameters)
     {
-        return $this->client->getHttpClient()->get($path, $parameters));
+        return $this->client->getHttpClient()->get($path, $parameters);
     }
 
     /**
@@ -35,7 +35,7 @@ abstract class AbstractApi implements ApiInterface
      */
     protected function post($path, $parameters)
     {
-        return $this->client->getHttpClient()->post($path, $parameters));
+        return $this->client->getHttpClient()->post($path, $parameters);
     }
 
     /**
@@ -45,7 +45,7 @@ abstract class AbstractApi implements ApiInterface
      */
     protected function put($path, $parameters)
     {
-        return $this->client->getHttpClient()->put($path, $parameters));
+        return $this->client->getHttpClient()->put($path, $parameters);
     }
 
     /**
@@ -55,6 +55,6 @@ abstract class AbstractApi implements ApiInterface
      */
     protected function delete($path, $parameters)
     {
-        return $this->client->getHttpClient()->delete($path, $parameters));
+        return $this->client->getHttpClient()->delete($path, $parameters);
     }
 }
