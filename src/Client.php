@@ -8,14 +8,55 @@ class Client
 {
     /** @var array */
     protected $classes = [
-        'ip' => 'Ip',
-        /*'providers' => 'Providers',
+        //circuits
         'circuits' => 'Circuits',
+        'circuitTypes' => 'CircuitTypes',
+        'circuitTerminations' => 'CircuitTerminations',
+        'providers' => 'CircuitProviders',
+        'providers' => 'Providers',
+        //dcim
+        'cables' => 'Cables',
+        'connectedDevices' => 'ConnectedDevices'
+        'consoleConnections' => 'ConsoleConnections',
+        'consolePortTemplates' => 'ConsolePortTemplates',
+        'consolePorts' => 'ConsolePorts',
+        'consoleServerPortTemplates' => 'ConsoleServerPortTemplates',
+        'consoleServerPorts' => 'ConsoleServerPorts',
+        'deviceBayTemplates' => 'DeviceBayTemplates',
+        'deviceBays' => 'DeviceBays',
+        'deviceRoles' => 'DeviceRoles',
+        'deviceTypes' => 'DeviceTypes',
+        'devices' => 'Devices',
+        'frontPortTemplates' => 'FrontPortTemplates',
+        'frontPorts' => 'FrontPorts',
+        'interfaceConnections' => 'InterfaceConnections',
+        'interfaceTemplates' => 'InterfaceTemplates',
+        'interfaces' => 'Interfaces',
+        'inventoryItems' => 'InventoryItems',
+        'manufacturers' => 'Manufacturers',
+        'platforms' => 'Platforms',
+        'powerFeeds' => 'PowerFeeds',
+        'powerOutlets' => 'PowerOutlets',
+        'powerOutletTemplates' => 'PowerOutletTemplates',
+        'powerPanels' => 'PowerPanels',
+        'powerPorts' => 'PowerPorts',
+        'powerPortTemplates' => 'PowerPortTemplates',
+        'rackGroups' => 'RackGroups',
+        'rackReservations' => 'RackReservations',
+        'rackRoles' => 'RackRoles',
+        'racks' => 'Racks',
+        'rearPortTemplates' => 'RearPortTemplates',
+        'rearPorts' => 'RearPorts',
+        'regions' => 'Regions',
         'sites' => 'Sites',
+        'virtualChassis' => 'VirtualChassis',
+        //ipam
+        'ip' => 'Ip',
+        /*'sites' => 'Sites',
         'racks' => 'Racks',
         'devices' => 'Devices',
         'prefixes' => 'Prefixes',
-        'cables' => 'Cables',
+
         'interfaces' => 'Interfaces',
         'rirs' => 'Rirs',
         'vlans' => 'Vlans',
@@ -24,7 +65,7 @@ class Client
         'tenants' => 'Tenants',
         'users' => 'Users',
         'clusters' => 'Clusters',*/
-        
+
     ];
 
     /** @var \wickedsoft\NetBox\HttpClient */
