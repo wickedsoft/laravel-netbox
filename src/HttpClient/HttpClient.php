@@ -40,9 +40,39 @@ class HttpClient implements HttpClientInterface
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function post($body = [])
+    public function get($path, $body = [])
     {
-        return $this->request($body, 'POST');
+        return $this->request($path, $body, 'GET');
+    }
+
+    /**
+     * @param array $body
+     * @return mixed
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function post($path, $body = [])
+    {
+        return $this->request($path, $body, 'POST');
+    }
+
+    /**
+     * @param array $body
+     * @return mixed
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function put($path, $body = [])
+    {
+        return $this->request($path, $body, 'PUT');
+    }
+
+    /**
+     * @param array $body
+     * @return mixed
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function delete($path, $body = [])
+    {
+        return $this->request($path, $body, 'DELETE');
     }
 
     /**
@@ -51,11 +81,11 @@ class HttpClient implements HttpClientInterface
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function request($body, $method)
+    public function request($path, $body, $method)
     {
         $response = $this->getClient()->request(
             $method,
-            $this->getOptions()['base_url'],
+            $this->getOptions()['base_url'].$path,
             [
                 'form_params' => $body
             ]
