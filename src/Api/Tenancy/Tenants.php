@@ -2,6 +2,8 @@
 
 namespace wickedsoft\NetBox\Api\Tenancy;
 
+use wickedsoft\NetBox\Api\AbstractApi;
+
 class Tenants extends AbstractApi
 {
     /**

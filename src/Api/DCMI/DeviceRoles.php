@@ -2,6 +2,8 @@
 
 namespace wickedsoft\NetBox\Api\DCMI;
 
+use wickedsoft\NetBox\Api\AbstractApi;
+
 class DeviceRoles extends AbstractApi
 {
     /**

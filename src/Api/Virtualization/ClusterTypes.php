@@ -2,6 +2,8 @@
 
 namespace wickedsoft\NetBox\Api\Virtualization;
 
+use wickedsoft\NetBox\Api\AbstractApi;
+
 class ClusterTypes extends AbstractApi
 {
     /**

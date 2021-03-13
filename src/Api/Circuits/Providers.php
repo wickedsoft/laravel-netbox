@@ -2,6 +2,8 @@
 
 namespace wickedsoft\NetBox\Api\Circuits;
 
+use wickedsoft\NetBox\Api\AbstractApi;
+
 class Providers extends AbstractApi
 {
     /**

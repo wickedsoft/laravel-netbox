@@ -2,6 +2,8 @@
 
 namespace wickedsoft\NetBox\Api\Virtualization;
 
+use wickedsoft\NetBox\Api\AbstractApi;
+
 class Interfaces extends AbstractApi
 {
     /**

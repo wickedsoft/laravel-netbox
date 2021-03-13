@@ -2,6 +2,8 @@
 
 namespace wickedsoft\NetBox\Api\Secrets;
 
+use wickedsoft\NetBox\Api\AbstractApi;
+
 class Session extends AbstractApi
 {
     /**

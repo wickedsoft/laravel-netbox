@@ -2,6 +2,8 @@
 
 namespace wickedsoft\NetBox\Api\Extras;
 
+use wickedsoft\NetBox\Api\AbstractApi;
+
 class ContentTypes extends AbstractApi
 {
     /**

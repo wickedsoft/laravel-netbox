@@ -2,6 +2,8 @@
 
 namespace wickedsoft\NetBox\Api\IPAM;
 
+use wickedsoft\NetBox\Api\AbstractApi;
+
 class Services extends AbstractApi
 {
     /**

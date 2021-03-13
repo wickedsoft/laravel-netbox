@@ -2,6 +2,8 @@
 
 namespace wickedsoft\NetBox\Api\Users;
 
+use wickedsoft\NetBox\Api\AbstractApi;
+
 class Permissions extends AbstractApi
 {
     /**
