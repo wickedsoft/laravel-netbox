@@ -640,7 +640,7 @@ NETBOX_CONNECTION=
 ```
 
 #### Access
-To use another netbox than your default one, you can specify it with the panel-method
+To use another netbox than your default one, you can specify it with the site method
 ```php
 // UsersController
 public function getIndex()

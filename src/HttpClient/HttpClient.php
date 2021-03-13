@@ -44,7 +44,7 @@ class HttpClient implements HttpClientInterface
     {
         $response = $this->getClient()->request(
             'GET',
-            config('netbox.panels.default.url').$path,
+            config('netbox.sites.default.url').$path,
             [
                 'query' => $query
             ]
@@ -61,7 +61,7 @@ class HttpClient implements HttpClientInterface
     {
         $response = $this->getClient()->request(
             'POST',
-            config('netbox.panels.default.url').$path,
+            config('netbox.sites.default.url').$path,
             [
                 'form_params' => $body
             ]
@@ -78,7 +78,7 @@ class HttpClient implements HttpClientInterface
     {
         $response = $this->getClient()->request(
             'PUT',
-            config('netbox.panels.default.url').$path,
+            config('netbox.sites.default.url').$path,
             [
                 'form_params' => $body
             ]
@@ -95,7 +95,7 @@ class HttpClient implements HttpClientInterface
     {
         $response = $this->getClient()->request(
             'DELETE',
-            config('netbox.panels.default.url').$path,
+            config('netbox.sites.default.url').$path,
             [
                 'form_params' => $body
             ]
