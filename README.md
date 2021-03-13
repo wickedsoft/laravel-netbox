@@ -4,9 +4,8 @@ NetBox is an open source web application designed to help manage and document co
 ### Table of contents
 - [Installation](INSTALL.md)
 - [Usage](#usage)
-- [Commands](#commands)
 - [Authentication](#authentication)
-- [MultiInstalls](multiinstalls)
+- [MultiInstalls](#multiinstalls)
 - [Change log](CHANGELOG.md)
 - [License](LICENSE.md)
 
