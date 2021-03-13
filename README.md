@@ -1,8 +1,13 @@
 ## Laravel NetBox
 NetBox is an open source web application designed to help manage and document computer networks.
+
 ### Table of contents
+- [Installation](INSTALL.md)
 - [Usage](#usage)
 - [Commands](#commands)
+- [Change log](CHANGELOG.md)
+- [License](LICENSE.md)
+- 
 ### Usage
 #### Authentication [users]
 It's possible to use a custom `netbox` authentication driver to login users in your application, by default the UserProfile will be cached for 60 minutes
@@ -20,6 +25,7 @@ if(Auth::attempt(['username' => $username, 'password' => $password]))
     dd(Auth::user(), Auth::id());
 }
 ```
+
 #### Multiple Installs [config]
 If you want to work with more Netbox installs, you can define more netboxes in the `config/netbox.php` file
 ```php
@@ -38,6 +44,7 @@ If you want to work with more Netbox installs, you can define more netboxes in t
 
 ],
 ```
+
 #### Multiple Installs [normal usage]
 To use another netbox than your default one, you can specify it with the panel-method
 ```php
@@ -51,6 +58,7 @@ public function getIndex()
     //
 }
 ```
+
 #### Multiple Installs [dependency injection]
 ```php
 // Route
