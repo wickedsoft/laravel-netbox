@@ -1,23 +1,8 @@
 ## Laravel NetBox
 NetBox is an open source web application designed to help manage and document computer networks.
 ### Table of contents
-- [Installation](#installation)
 - [Usage](#usage)
 - [Commands](#commands)
-### Installation
-Install this package with composer:
-```
-composer require wickedsoft/laravel-netbox
-```
-Copy the config files for the HostFact-plugin
-```
-php artisan vendor:publish --provider="wickedsoft\NetBox\ServiceProvider" --tag="config"
-```
-Add the HostFact credentials to your `.env` file
-```
-NETBOX_DEFAULT_URL=
-NETBOX_DEFAULT_KEY=
-```
 ### Usage
 #### Authentication [users]
 It's possible to use a custom `netbox` authentication driver to login users in your application, by default the UserProfile will be cached for 60 minutes
