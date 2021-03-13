@@ -1,3 +1,8 @@
+[![Build Status]](https://github.com/nickurt/laravel-hostfact/actions)
+[![Total Downloads]](https://packagist.org/packages/nickurt/laravel-hostfact)
+[![Latest Stable Version]](https://packagist.org/packages/nickurt/laravel-hostfact)
+[![MIT Licensed]](LICENSE.md)
+
 ## Laravel NetBox
 NetBox is an open source web application designed to help manage and document computer networks.
 ### Table of contents
