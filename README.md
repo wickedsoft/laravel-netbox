@@ -1,10 +1,9 @@
 ## Laravel NetBox
-
 NetBox is an open source web application designed to help manage and document computer networks.
 ### Table of contents
 - [Installation](#installation)
 - [Usage](#usage)
-- [Models](#models)
+- [Commands](#commands)
 ### Installation
 Install this package with composer:
 ```
@@ -88,7 +87,7 @@ public function getIndex(NetBox $netBox)
     //
 }
 ```
-### Models
+### Commands
 #### Global
 ```php
 NetBox::status()->show(array $params)
