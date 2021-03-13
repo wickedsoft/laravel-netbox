@@ -14,7 +14,6 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
         $this->publishes([
             __DIR__ . '/../config/netbox.php' => config_path('netbox.php')
         ], 'config');
-
         \Auth::provider('netbox', function ($app, array $config) {
             return new \wickedsoft\NetBox\Providers\NetBoxProvider();
         });
@@ -39,11 +38,10 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
     {
         $this->app->singleton('wickedsoft\NetBox\NetBox', function ($app) {
             $netBox = new NetBox($app);
-            $netBox->panel($netBox->getDefaultPanel());
+            $netBox->site($netBox->getDefaultSite());
 
             return $netBox;
         });
-
         $this->app->alias('wickedsoft\NetBox\NetBox', 'NetBox');
     }
 }

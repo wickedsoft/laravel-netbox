@@ -64,7 +64,7 @@ class Client
         'tags' => 'Extras\Tags',
 
         //ipam
-        'aggregates' => 'IPAM\Aggregates'
+        'aggregates' => 'IPAM\Aggregates',
         'ipAddresses' => 'IPAM\IpAddresses',
         'prefixes' => 'IPAM\Prefixes',
         'rirs' => 'IPAM\Rirs',
@@ -131,9 +131,7 @@ class Client
         if (!isset($this->classes[$name])) {
             throw new \InvalidArgumentException(sprintf('Undefined method called:"%s"', $name));
         }
-
         $class = '\\wickedsoft\\NetBox\\Api\\' . $this->classes[$name];
-
         return new $class($this);
     }
 
@@ -145,9 +143,7 @@ class Client
         if (!isset($this->httpClient)) {
             $this->httpClient = new HttpClient();
         }
-
         $this->httpClient->setOptions($this->getOptions());
-
         return $this->httpClient;
     }
 

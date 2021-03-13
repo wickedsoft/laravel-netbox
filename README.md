@@ -5,82 +5,12 @@ NetBox is an open source web application designed to help manage and document co
 - [Installation](INSTALL.md)
 - [Usage](#usage)
 - [Commands](#commands)
+- [Authentication](#authentication)
+- [MultiInstalls](multiinstalls)
 - [Change log](CHANGELOG.md)
 - [License](LICENSE.md)
-- 
+
 ### Usage
-#### Authentication [users]
-It's possible to use a custom `netbox` authentication driver to login users in your application, by default the UserProfile will be cached for 60 minutes
-```php
-// config/auth.php
-'providers' => [
-    'netbox' => [
-        'driver' => 'netbox'
-    ],
-]
-
-// Auth::attempt
-if(Auth::attempt(['username' => $username, 'password' => $password]))
-{
-    dd(Auth::user(), Auth::id());
-}
-```
-
-#### Multiple Installs [config]
-If you want to work with more Netbox installs, you can define more netboxes in the `config/netbox.php` file
-```php
-// config/netbox.php
-'panels' => [
-
-    'default' => [
-        'url' => env('NETBOX_DEFAULT_URL'),
-        'key' => env('NETBOX_DEFAULT_KEY'),
-    ],
-
-    'chicago' => [
-        'url' => env('NETBOX_CHI_URL'),
-        'key' => env('NETBOX_CHI_KEY'),
-    ],
-
-],
-```
-
-#### Multiple Installs [normal usage]
-To use another netbox than your default one, you can specify it with the panel-method
-```php
-// UsersController
-public function getIndex()
-{
-    $users = NetBox::panel('chicago')->users()->list([
-        'limit' => 20
-    ]);
-
-    //
-}
-```
-
-#### Multiple Installs [dependency injection]
-```php
-// Route
-Route::get('/netbox/{netBox}/users', ['as' => 'netbox/users', 'uses' => 'UsersController@getIndex']);
-
-Route::bind('netBox', function ($value, $route) {
-    app('NetBox')->panel($value);
-
-    return app('NetBox');
-});
-
-// UsersController
-public function getIndex(NetBox $netBox)
-{
-    $users = $netBox->users()->list([
-        'limit' => 20
-    ]);
-
-    //
-}
-```
-### Commands
 #### Global
 ```php
 NetBox::status()->show(array $params)
@@ -659,5 +589,89 @@ NetBox::virtualMachines()->add(array $params)
 NetBox::virtualMachines()->delete(int $id, array $params)
 NetBox::virtualMachines()->edit(int $id, array $params)
 NetBox::virtualMachines()->show(int $id, array $params)
+```
+
+### Authentication
+It's possible to use a custom `netbox` authentication driver to login users in your application,
+#### Setup
+```php
+// config/auth.php
+'providers' => [
+    'netbox' => [
+        'driver' => 'netbox'
+    ],
+]
+
+// Auth::attempt
+if(Auth::attempt(['username' => $username, 'password' => $password]))
+{
+    dd(Auth::user(), Auth::id());
+}
+```
+#### Caching
+By default the UserProfile will be cached for 60 minutes, you can use the command below to clear it, it will refresh the next time it is needed.
+```php
+cache()->forget('netbox_user_id_' .$user_id);
+```
+
+### MultiInstalls
+#### Configuration
+If you want to work with more Netbox installs, you can define more instances in the `config/netbox.php` file
+```php
+// config/netbox.php
+'sites' => [
+
+    'default' => [
+        'url' => env('NETBOX_DEFAULT_URL'),
+        'key' => env('NETBOX_DEFAULT_KEY'),
+    ],
+
+    'chicago' => [
+        'url' => env('NETBOX_CHI_URL'),
+        'key' => env('NETBOX_CHI_KEY'),
+    ],
+
+],
+```
+#### Default site
+If you have multiple Netbox sites, you can add this to your environment file (.env), in order to pick a different default site than the default.
+```
+NETBOX_CONNECTION=
+```
+
+#### Access
+To use another netbox than your default one, you can specify it with the panel-method
+```php
+// UsersController
+public function getIndex()
+{
+    $users = NetBox::site('chicago')->users()->list([
+        'limit' => 20
+    ]);
+
+    //
+}
+```
+
+#### Dependency injection
+```php
+// Route
+Route::get('/netbox/{netBox}/users', ['as' => 'netbox/users', 'uses' => 'UsersController@getIndex']);
+
+Route::bind('netBox', function ($value, $route) {
+    app('NetBox')->site($value);
+
+    return app('NetBox');
+});
+
+// UsersController
+public function getIndex(NetBox $netBox)
+{
+    $users = $netBox->users()->list([
+        'limit' => 20
+    ]);
+
+    //
+}
 ```
 - - -

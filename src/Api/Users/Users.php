@@ -5,6 +5,17 @@ namespace wickedsoft\NetBox\Api\Users;
 class Users extends AbstractApi
 {
     /**
+    * @param $params
+    * @return mixed
+    * @throws \GuzzleHttp\Exception\GuzzleException
+    */
+    public function checkLogin($params)
+    {
+        return $this->get("/users/users/".$id."/", $params);
+        //return $this->post(array_merge(['controller' => 'debtor', 'action' => 'checkLogin'], $params));
+    }
+
+    /**
      * @param $params
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException

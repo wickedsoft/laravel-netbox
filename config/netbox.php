@@ -4,7 +4,7 @@ return [
 
     'default' => env('NETBOX_CONNECTION', 'default'),
 
-    'panels' => [
+    'sites' => [
         'default' => [
             'url' => env('NETBOX_DEFAULT_URL'),
             'key' => env('NETBOX_DEFAULT_KEY'),

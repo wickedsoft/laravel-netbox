@@ -11,7 +11,7 @@ class NetBox
     protected $client;
 
     /** @var array */
-    protected $panels = [];
+    protected $sites = [];
 
     /**
      * NetBox constructor.
@@ -36,17 +36,17 @@ class NetBox
      * @param null|string $name
      * @return \wickedsoft\NetBox\Client
      */
-    public function panel($name = null)
+    public function site($name = null)
     {
-        $name = $name ?: $this->getDefaultPanel();
+        $name = $name ?: $this->getDefaultSite();
 
-        return $this->panels[$name] = $this->get($name);
+        return $this->sites[$name] = $this->get($name);
     }
 
     /**
      * @return string
      */
-    public function getDefaultPanel()
+    public function getDefaultSite()
     {
         return $this->app['config']['netbox.default'];
     }
@@ -57,7 +57,7 @@ class NetBox
      */
     protected function get($name)
     {
-        return $this->panels[$name] ?? $this->resolve($name);
+        return $this->sites[$name] ?? $this->resolve($name);
     }
 
     /**
@@ -83,6 +83,6 @@ class NetBox
      */
     protected function getConfig($name)
     {
-        return $this->app['config']["netbox.panels.{$name}"];
+        return $this->app['config']["netbox.sites.{$name}"];
     }
 }
