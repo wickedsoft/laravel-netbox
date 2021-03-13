@@ -592,7 +592,8 @@ NetBox::virtualMachines()->show(int $id, array $params)
 ```
 
 ### Authentication
-It's possible to use a custom `netbox` authentication driver to login users in your application,
+It's possible to use a custom `netbox` authentication driver to login users in your application.
+*** CURRENTLY AUTHENTICATION DOES NOT WORK CORRECTLY ***
 #### Setup
 ```php
 // config/auth.php
