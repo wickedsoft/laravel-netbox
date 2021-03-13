@@ -2,7 +2,7 @@
 
 namespace wickedsoft\NetBox\Api\Virtualization;
 
-class ClusterTypes extends AbstractApi
+class Clusters extends AbstractApi
 {
     /**
      * @param $params
