@@ -31,6 +31,6 @@ class Reports extends AbstractApi
      */
     public function run($id, $params=[])
     {
-        return $this->post("/extras/reports/".$id."/", $params);
+        return $this->post("/extras/reports/".$id."/run/", $params);
     }
 }

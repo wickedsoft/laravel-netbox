@@ -75,32 +75,28 @@ class Client
         'vlans' => 'IPAM\Vlans',
         'vrfs' => 'IPAM\Vrfs',
 
-        //circuits
-        'circuits' => 'Circuits',
-        'circuitTypes' => 'CircuitTypes',
-        'circuitTerminations' => 'CircuitTerminations',
-        'providers' => 'CircuitProviders',
-
         //secrets
+        'keyGen' => 'Secrets\KeyGen',
         'secrets' => 'Secrets\Secrets',
         'secretRoles' => 'Secrets\SecretRoles',
-        'keyGen' => 'Secrets\KeyGen',
+        'session' => 'Secrets\Session',
 
         //Tenancy
         'tenantGroups' => 'Tenancy\TenantGroups',
         'tenants' => 'Tenancy\Tenants',
 
         //users
+        'config' => 'Users\Config',
         'groups' => 'Users\Groups',
         'permissions' => 'Users\Permissions',
         'users' => 'Users\Users',
-        'config' => 'Users\Config',
 
         //Virtualization
         'clusterGroups' => 'Virtualization\ClusterGroups',
-        'clusterTypes' => 'Virtualization\ClusterTypes',
         'clusters' => 'Virtualization\Clusters',
+        'clusterTypes' => 'Virtualization\ClusterTypes',
         'vinterfaces' => 'Virtualization\Interfaces',
+        'virtualMachines' => 'Virtualization\VirtualMachines',
 
         'status' => 'Status',
 

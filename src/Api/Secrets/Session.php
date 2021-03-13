@@ -2,14 +2,14 @@
 
 namespace wickedsoft\NetBox\Api\Secrets;
 
-class KeyGen extends AbstractApi
+class Session extends AbstractApi
 {
     /**
      * @param $params
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function add($params=[])
+    public function list($params=[])
     {
         return $this->post("/secrets/get-session-key/", $params);
     }
