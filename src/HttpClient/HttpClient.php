@@ -63,7 +63,7 @@ class HttpClient implements HttpClientInterface
             'POST',
             config('netbox.sites.default.url').$path,
             [
-                'form_params' => $body
+                'json' => $body
             ]
         );
         return json_decode((string)$response->getBody(), true);
@@ -80,7 +80,7 @@ class HttpClient implements HttpClientInterface
             'PUT',
             config('netbox.sites.default.url').$path,
             [
-                'form_params' => $body
+                'json' => $body
             ]
         );
         return json_decode((string)$response->getBody(), true);
@@ -97,7 +97,7 @@ class HttpClient implements HttpClientInterface
             'DELETE',
             config('netbox.sites.default.url').$path,
             [
-                'form_params' => $body
+                'json' => $body
             ]
         );
         return json_decode((string)$response->getBody(), true);
