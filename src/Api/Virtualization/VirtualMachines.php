@@ -21,7 +21,7 @@ class VirtualMachines extends AbstractApi
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function delete($id, $params=[])
+    public function remove($id, $params=[])
     {
         return $this->delete("/virtualization/virtual-machines/".$id."/", $params);
     }
