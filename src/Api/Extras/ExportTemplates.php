@@ -21,7 +21,7 @@ class ExportTemplates extends AbstractApi
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function delete($id, $params=[])
+    public function remove($id, $params=[])
     {
         return $this->delete("/extras/export-templates/".$id."/", $params);
     }

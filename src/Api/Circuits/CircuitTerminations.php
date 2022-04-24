@@ -21,7 +21,7 @@ class CircuitTerminations extends AbstractApi
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function delete($id, $params=[])
+    public function remove($id, $params=[])
     {
         return $this->delete("/circuits/circuit-terminations/".$id."/", $params);
     }
